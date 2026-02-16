@@ -99,6 +99,57 @@ public:
         cout << "\n****** LISTA DE JUGADORES ******" << endl;
         mostrarRec(cabeza, cabeza);
     }
+
+    void jugar() {
+        if (contarJugadores() < 2) {
+            cout << "Se necesitan minimo 2 jugadores." << endl;
+            return;
+        }
+
+        Nodo* jugador1 = cabeza;
+
+        do {
+            Nodo* jugador2 = jugador1->siguiente;
+
+            while (jugador2 != cabeza) {
+
+                int j1 = rand() % 3 + 1;
+                int j2 = rand() % 3 + 1;
+
+                cout << "\n" << jugador1->nombre
+                     << " vs " << jugador2->nombre << endl;
+
+                cout << jugador1->nombre << " saco: "
+                     << convertirJugada(j1) << endl;
+
+                cout << jugador2->nombre << " saco: "
+                     << convertirJugada(j2) << endl;
+
+                if (j1 == j2) {
+                    cout << "Empate!" << endl;
+                }
+                else if ((j1 == 1 && j2 == 3) ||
+                         (j1 == 2 && j2 == 1) ||
+                         (j1 == 3 && j2 == 2)) {
+                    cout << jugador1->nombre << " gana esta ronda!" << endl;
+                    jugador1->puntaje += 3;
+                }
+                else {
+                    cout << jugador2->nombre << " gana esta ronda!" << endl;
+                    jugador2->puntaje += 3;
+                }
+
+                jugador2 = jugador2->siguiente;
+            }
+
+            jugador1 = jugador1->siguiente;
+
+        } while (jugador1 != cabeza);
+
+        cout << "\nPartidas finalizadas.\n";
+    }
+
+
 };
 
 
