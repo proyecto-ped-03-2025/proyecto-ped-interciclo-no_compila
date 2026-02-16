@@ -149,6 +149,7 @@ public:
         cout << "\nPartidas finalizadas.\n";
     }
 
+    
 void reportarGanador() {
         if (cabeza == NULL) {
             cout << "No hay jugadores." << endl;
