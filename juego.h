@@ -149,6 +149,19 @@ public:
         cout << "\nPartidas finalizadas.\n";
     }
 
+    
+void reportarGanador() {
+        if (cabeza == NULL) {
+            cout << "No hay jugadores." << endl;
+            return;
+        }
+
+        Nodo* ganador = ganadorRec(cabeza, cabeza, cabeza);
+
+        cout << "\n****** GANADOR ******" << endl;
+        cout << "Nombre: " << ganador->nombre << endl;
+        cout << "Puntaje: " << ganador->puntaje << endl;
+    }
 
 };
 
