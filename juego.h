@@ -1,5 +1,9 @@
-#include <iostream>
+#define JUEGO_H    
 
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -86,5 +90,15 @@ public:
         cout << "Jugador agregado correctamente." << endl;
     
     }
+     void mostrarJugadores() {
+        if (cabeza == NULL) {
+        cout << "No hay jugadores inscritos." << endl;
+            return;
+        }
 
-}
+        cout << "\n****** LISTA DE JUGADORES ******" << endl;
+        mostrarRec(cabeza, cabeza);
+    }
+};
+
+
