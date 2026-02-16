@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 using namespace std;
 
 struct Nodo {
@@ -49,3 +50,41 @@ private:
 
         return ganadorRec(actual->siguiente, inicio, mayor);
     }
+
+public:
+    Juego() {
+        cabeza = NULL;
+        srand(time(0));
+    }
+
+    void inscribirJugador() {
+        if (contarJugadores() >= 5) {
+            cout << "Maximo 5 jugadores permitidos." << endl;
+            return;
+        }
+
+        string nombre;
+        cout << "Nombre del jugador: ";
+        cin >> nombre;
+
+        Nodo* nuevo = new Nodo();
+        nuevo->nombre = nombre;
+        nuevo->puntaje = 0;
+
+        if (cabeza == NULL) {
+            cabeza = nuevo;
+            nuevo->siguiente = cabeza;
+        } else {
+            Nodo* aux = cabeza;
+            while (aux->siguiente != cabeza) {
+                aux = aux->siguiente;
+            }
+            aux->siguiente = nuevo;
+            nuevo->siguiente = cabeza;
+        }
+
+        cout << "Jugador agregado correctamente." << endl;
+    
+    }
+
+}
