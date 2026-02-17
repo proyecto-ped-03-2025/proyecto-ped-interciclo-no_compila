@@ -165,4 +165,14 @@ void reportarGanador() {
 
 };
 
+ void ayuda() {
+        cout << "\n********** AYUDA DEL SISTEMA **********\n\n";
+        cout << "Este programa utiliza una lista circular dinamica." << endl;
+        cout << "Permite inscribir hasta 5 jugadores." << endl;
+        cout << "Todos compiten contra todos automaticamente." << endl;
+        cout << "Cada victoria suma 3 puntos." << endl;
+        cout << "El ganador se obtiene mediante una funcion recursiva." << endl << endl;
+    }
+    
+
 
