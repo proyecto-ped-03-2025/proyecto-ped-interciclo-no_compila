@@ -1,3 +1,4 @@
+#ifndef JUEGO_H
 #define JUEGO_H    
 
 #include <iostream>
@@ -163,8 +164,6 @@ void reportarGanador() {
         cout << "Puntaje: " << ganador->puntaje << endl;
     }
 
-};
-
  void ayuda() {
         cout << "\n********** AYUDA DEL SISTEMA **********\n\n";
         cout << "Este programa utiliza una lista circular dinamica." << endl;
@@ -174,5 +173,12 @@ void reportarGanador() {
         cout << "El ganador se obtiene mediante una funcion recursiva." << endl << endl;
     }
     
+void integrantes() {
+        cout << "\n****** INTEGRANTES ******\n";
+        cout << "Gerardo Moran - 00382425" << endl;
+        cout << "Tania Quintanilla  - 00385125" << endl;
+        cout << "Pamela Rodriguez - 00383825" << endl;
+    }
+};
 
-
+#endif
