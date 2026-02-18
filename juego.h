@@ -20,6 +20,7 @@ class Juego {
 private:
     Nodo* cabeza;
 
+    // Cuenta el número de jugadores inscritos en la lista circular.
     int contarJugadores() {
         if (cabeza == NULL) return 0;
 
@@ -34,6 +35,7 @@ private:
         return i;
     }
 
+    // Convierte el número de jugada a su representación en texto.
     string convertirJugada(int j) {
         if (j == 1) return "Piedra";
         if (j == 2) return "Papel";
