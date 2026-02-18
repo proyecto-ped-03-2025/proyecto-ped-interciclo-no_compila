@@ -1,0 +1,22 @@
+*****************************************
+Fecha: Tue Feb 17 20:50:40 2026
+RESULTADOS DE LA COMPETENCIA
+
+Nombre: Tania | Puntaje: 3
+Nombre: Pame | Puntaje: 6
+Nombre: Gerardo | Puntaje: 0
+
+GANADOR: Pame con 6 puntos.
+****************************************
+
+*****************************************
+Fecha: Tue Feb 17 20:51:02 2026
+RESULTADOS DE LA COMPETENCIA
+
+Nombre: Tania | Puntaje: 3
+Nombre: Pame | Puntaje: 6
+Nombre: Gerardo | Puntaje: 0
+
+GANADOR: Pame con 6 puntos.
+****************************************
+
