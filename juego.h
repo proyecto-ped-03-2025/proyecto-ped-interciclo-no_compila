@@ -156,6 +156,8 @@ public:
     }
 
     
+    // Muestra en pantalla el jugador con mayor puntaje.
+   // Utiliza la función recursiva ganadorRec().
 void reportarGanador() {
         if (cabeza == NULL) {
             cout << "No hay jugadores." << endl;
