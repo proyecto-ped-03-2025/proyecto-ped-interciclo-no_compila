@@ -124,12 +124,15 @@ public:
 
             while (jugador2 != cabeza) {
 
+                // Genero las jugadas de forma aleatoria
+                // (1 = Piedra, 2 = Papel, 3 = Tijera)
                 int j1 = rand() % 3 + 1;
                 int j2 = rand() % 3 + 1;
 
                 cout << "\n" << jugador1->nombre
                      << " vs " << jugador2->nombre << endl;
 
+                // Muestro en texto la jugada generada
                 cout << jugador1->nombre << " saco: "
                      << convertirJugada(j1) << endl;
 
@@ -139,12 +142,16 @@ public:
                 if (j1 == j2) {
                     cout << "Empate!" << endl;
                 }
+
+                // Evaluo las combinaciones donde gana jugador1
                 else if ((j1 == 1 && j2 == 3) ||
                          (j1 == 2 && j2 == 1) ||
                          (j1 == 3 && j2 == 2)) {
                     cout << jugador1->nombre << " gana esta ronda!" << endl;
                     jugador1->puntaje += 3;
                 }
+
+                // En cualquier otro caso gana jugador2
                 else {
                     cout << jugador2->nombre << " gana esta ronda!" << endl;
                     jugador2->puntaje += 3;
@@ -158,6 +165,8 @@ public:
         } while (jugador1 != cabeza);
 
         cout << "\nPartidas finalizadas.\n";
+
+        // guardo automaticamente los resultados en el archivo
         guardarResultados();
     }
 
