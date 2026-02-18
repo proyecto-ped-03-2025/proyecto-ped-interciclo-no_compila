@@ -5,6 +5,8 @@
 #include <ctime>
 #include <string>
 #include <cstdlib>
+#include <fstream>
+
 
 using namespace std;
 
@@ -163,6 +165,50 @@ void reportarGanador() {
         cout << "Nombre: " << ganador->nombre << endl;
         cout << "Puntaje: " << ganador->puntaje << endl;
     }
+
+void guardarResultados() {
+    if (cabeza == NULL) {
+        cout << "No hay jugadores para guardar."<< endl;
+        return;
+    }
+
+    ofstream archivo("resultados.txt", ios::app);
+
+    if (!archivo) {
+        cout << "Error al abrir el archivo."<< endl;
+        return;
+    }
+
+    time_t ahora = time(0);
+    char* fecha = ctime(&ahora);
+
+    archivo << "*****************************************"<< endl;
+    archivo << "Fecha: " << fecha;
+    archivo << "RESULTADOS DE LA COMPETENCIA"<< endl<< endl;
+
+    Nodo* actual = cabeza;
+    Nodo* ganador = cabeza;
+
+    do {
+        archivo << "Nombre: " << actual->nombre
+                << " | Puntaje: " << actual->puntaje << endl;
+
+        if (actual->puntaje > ganador->puntaje)
+            ganador = actual;
+
+        actual = actual->siguiente;
+
+    } while (actual != cabeza);
+
+    archivo << "\nGANADOR: " << ganador->nombre
+            << " con " << ganador->puntaje << " puntos."<< endl;
+
+    archivo << "****************************************"<< endl<< endl;
+
+    archivo.close();
+
+    cout << "Resultados guardados en 'resultados.txt'" << endl;
+}
 
  void ayuda() {
         cout << "\n********** AYUDA DEL SISTEMA **********\n\n";
