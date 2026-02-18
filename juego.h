@@ -150,6 +150,7 @@ public:
         } while (jugador1 != cabeza);
 
         cout << "\nPartidas finalizadas.\n";
+        guardarResultados();
     }
 
     
