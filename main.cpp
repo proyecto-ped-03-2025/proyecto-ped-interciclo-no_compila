@@ -44,6 +44,27 @@ Juego juego;
             juego.reportarGanador();
             break;
 
+         case 5:
+            juego.guardarResultados();
+            break;
+
+        case 6:
+            juego.ayuda();
+            break;
+
+        case 7:
+            juego.integrantes();
+            break;
+
+        case 8:
+            cout << "Saliendo..." << endl;
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+        }
+
+    } while (opcion != 8);
 
     return 0;
 } 
