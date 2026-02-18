@@ -20,5 +20,30 @@ Juego juego;
         cout << "Opcion: ";
         cin >> opcion;
 
+     switch (opcion) {
+
+        case 1: {
+            char respuesta;
+            do {
+                juego.inscribirJugador();
+                cout << "Desea agregar otro jugador? (s/n): ";
+                cin >> respuesta;
+            } while (respuesta == 's' || respuesta == 'S');
+            break;
+        }
+
+        case 2:
+            juego.mostrarJugadores();
+            break;
+
+        case 3:
+            juego.jugar();
+            break;
+
+        case 4:
+            juego.reportarGanador();
+            break;
+
+
     return 0;
-}
+} 
