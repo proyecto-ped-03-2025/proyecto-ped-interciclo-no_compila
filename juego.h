@@ -64,6 +64,8 @@ public:
         srand(time(0));
     }
 
+   // Inserta un nuevo jugador en la lista circular.
+  // Valida que no se exceda el máximo de 5 jugadores.
     void inscribirJugador() {
         if (contarJugadores() >= 5) {
             cout << "Maximo 5 jugadores permitidos." << endl;
