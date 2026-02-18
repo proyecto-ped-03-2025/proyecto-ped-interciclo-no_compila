@@ -42,18 +42,20 @@ private:
         return "Tijera";
     }
 
+    // Función recursiva para mostrar los jugadores y sus puntajes.
     void mostrarRec(Nodo* actual, Nodo* inicio) {
-        cout << "Nombre: " << actual->nombre
-             << " | Puntaje: " << actual->puntaje << endl;
-
+        cout << "Nombre: " << actual->nombre << " | Puntaje: " << actual->puntaje << endl;
+    
+        // Si el siguiente nodo no es el inicio, continúa mostrando recursivamente.
         if (actual->siguiente != inicio)
-            mostrarRec(actual->siguiente, inicio);
+        mostrarRec(actual->siguiente, inicio);
     }
-
+    
+    // Función recursiva para encontrar el jugador con mayor puntaje.
     Nodo* ganadorRec(Nodo* actual, Nodo* inicio, Nodo* mayor) {
         if (actual->puntaje > mayor->puntaje)
             mayor = actual;
-
+        // Si el siguiente nodo es el inicio, se ha recorrido toda la lista y se devuelve el mayor encontrado.
         if (actual->siguiente == inicio)
             return mayor;
 
