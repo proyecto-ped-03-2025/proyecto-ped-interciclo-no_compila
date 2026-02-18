@@ -115,9 +115,11 @@ public:
             return;
         }
 
+        // Empiezo desde la cabeza de la lista circular
         Nodo* jugador1 = cabeza;
 
         do {
+            // El segundo jugador empieza desde el siguiente nodo
             Nodo* jugador2 = jugador1->siguiente;
 
             while (jugador2 != cabeza) {
