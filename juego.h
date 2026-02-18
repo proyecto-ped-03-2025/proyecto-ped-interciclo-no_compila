@@ -171,6 +171,8 @@ void reportarGanador() {
         cout << "Puntaje: " << ganador->puntaje << endl;
     }
 
+    // Guarda en el archivo resultados.txt la lista de jugadores.
+   // Fecha de ejecución y el ganador del juego. 
 void guardarResultados() {
     if (cabeza == NULL) {
         cout << "No hay jugadores para guardar."<< endl;
